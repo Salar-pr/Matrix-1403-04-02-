@@ -12,3 +12,4 @@ def jadval(row,column,a,b):
 #جدا سازی ان به مقدار ستون
     for i in range(0, len(my_list),row):
         print(my_list[i:i+row],"\t"*2)
+jadval(row,column,a,b)
