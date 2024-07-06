@@ -7,7 +7,7 @@ def create_random_table(row, column, a, b):
     # چاپ جدول
     for i in range(0, len(my_list), column):
         
-        print(str(my_list[i:i + column]).split())
+        print(str(my_list[i:i + column]).replace(',','\t'))
     return my_list
 
 # تابع برای یافتن مختصات اعداد تکرار شده
@@ -25,15 +25,25 @@ row = int(input("enter your row: "))
 column = int(input("enter your cole: "))
 a = int(input("enter your start rang random:"))
 b = int(input("enter your rnd rang random:"))
+x = []
+x = range(a,b)
+
 
 # ایجاد جدول و یافتن مختصات اعداد تکرار شده
 my_list = create_random_table(row, column, a, b)
-n = int(input("enter your number for serche :"))
-occurrences = find_occurrences(my_list, n, row, column)
-
-#چاب تعداد تکرار
-print(count_list(my_list,n))
-#چاپ مختصات
-for occ in occurrences:
-  print(f"row {occ[0] + 1}, column {occ[1] + 1}")
+#امتحان برای رفع خطا کد 
+try:
+    n = int(input("enter your number for serche :"))
+    #یافتن مختصات
+    occurrences = find_occurrences(my_list, n, row, column)
+    if x in n:
+        #چاب تعداد تکرار
+        print("The number of repetitions of the number:",count_list(my_list,n))
+        #چاپ مختصات
+        for occ in occurrences:
+            print(f"row {occ[0] + 1}, column {occ[1] + 1}")
+    else:
+        print("not found")
+except:
+    print('not found')
   
