@@ -50,11 +50,20 @@ b = int(input("enter your end rang random:"))
 
 # ایجاد جدول و یافتن مختصات اعداد تکرار شده
 my_list = create_random_table(row, column, a, b)
-n = int(input("enter your number for serche :"))
-occurrences = find_occurrences(my_list, n, row, column)
 
-# چاب تعداد تکرار
-print(count_list(my_list, n))
-# چاپ مختصات
-for occ in occurrences:
-    print(f"row {occ[0] + 1}, column {occ[1] + 1}")
+
+#امتحان برای رفع خطا کد 
+try:
+    n = int(input("enter your number for serche :"))
+    #یافتن مختصات
+    occurrences = find_occurrences(my_list, n, row, column)
+    if x in n:
+        #چاب تعداد تکرار
+        print("The number of repetitions of the number:",count_list(my_list,n))
+        #چاپ مختصات
+        for occ in occurrences:
+            print(f"row {occ[0] + 1}, column {occ[1] + 1}")
+    else:
+        print("not found")
+except:
+    print('not found')
